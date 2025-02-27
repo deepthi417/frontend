@@ -13,7 +13,7 @@ async function processText(endpoint) {
     outputText.value = "Processing...";
 
     try {
-        const response = await fetch(`http://127.0.0.1:8000/${endpoint}/`, {
+        const response = await fetch(`https://writewise-backend.onrender.com/${endpoint}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -26,6 +26,10 @@ async function processText(endpoint) {
             })
         });
 
+        if (!response.ok) {
+            throw new Error(`HTTP Error: ${response.status}`);
+        }
+
         const data = await response.json();
         outputText.value = data[Object.keys(data)[0]];
     } catch (error) {
@@ -33,3 +37,4 @@ async function processText(endpoint) {
         outputText.value = "Error processing text. Please try again.";
     }
 }
+
