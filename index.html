@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WriteWise AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>WriteWise AI Assistant</h1>
+
+        <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+
+        <div class="options">
+            <label> Tone:
+                <select id="tone">
+                    <option value="neutral">Neutral</option>
+                    <option value="formal">Formal</option>
+                    <option value="casual">Casual</option>
+                </select>
+            </label>
+
+            <label> Writing Style:
+                <select id="style">
+                    <option value="concise">Concise</option>
+                    <option value="detailed">Detailed</option>
+                    <option value="creative">Creative</option>
+                </select>
+            </label>
+
+            <label> Audience:
+                <select id="audience">
+                    <option value="general">General</option>
+                    <option value="academic">Academic</option>
+                    <option value="business">Business</option>
+                    <option value="technical">Technical</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="buttons">
+            <button onclick="processText('correct')">Correct Grammar</button>
+            <button onclick="processText('enhance')">Enhance Content</button>
+            <button onclick="processText('summarize')">Summarize</button>
+            <button onclick="processText('paraphrase')">Paraphrase</button>
+        </div>
+
+        <h2>Output:</h2>
+        <textarea id="outputText" readonly></textarea>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
