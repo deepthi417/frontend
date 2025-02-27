@@ -37,4 +37,3 @@ async function processText(endpoint) {
         outputText.value = "Error processing text. Please try again.";
     }
 }
-
